@@ -59,7 +59,7 @@ class HomeHeader extends StatelessWidget {
             child: Center(
               child: Text(
                 link,
-                style: TextStyle(color: Colors.white, fontSize: 15, letterSpacing: 1 ),
+                style: TextStyle(color: Colors.white, fontSize: 14, letterSpacing: 1 ),
               ),
             ),
           ),
