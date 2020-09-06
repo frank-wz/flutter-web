@@ -34,28 +34,30 @@ class CardItems {
 }
 
 List<CardItems> servicesCardList(BuildContext context) => [
-  CardItems(
-    assetName: 'places/india_thanjavur_market.png',
-    assetPackage: _kAssetsPackage,
-    title:
-    "Mobile App Design",
-    description: "Lay a strong foundation for your digital apps with a neat and useable design",
-  ),
-  CardItems(
-    assetName: 'places/india_chettinad_silk_maker.png',
-    assetPackage: _kAssetsPackage,
-    title: "Mobile App Development",
-    description: "Get mobile applications developed for your start-ups, businesses, and enterprise",
-    type: CardType.tappable,
-  ),
-  CardItems(
-    assetName: 'places/india_tanjore_thanjavur_temple.png',
-    assetPackage: _kAssetsPackage,
-    title: "Web App Development",
-    description: "Have web applications (CMS, Responsive websites, and more) developed to compliment your mobile apps.",
-    type: CardType.selectable,
-  ),
-];
+      CardItems(
+        assetName: 'places/india_thanjavur_market.png',
+        assetPackage: _kAssetsPackage,
+        title: "Mobile App Design",
+        description:
+            "Lay a strong foundation for your digital apps with a neat and useable design",
+      ),
+      CardItems(
+        assetName: 'places/india_chettinad_silk_maker.png',
+        assetPackage: _kAssetsPackage,
+        title: "Mobile App Development",
+        description:
+            "Get mobile applications developed for your start-ups, businesses, and enterprise",
+        type: CardType.tappable,
+      ),
+      CardItems(
+        assetName: 'places/india_tanjore_thanjavur_temple.png',
+        assetPackage: _kAssetsPackage,
+        title: "Web App Development",
+        description:
+            "Have web applications (CMS, Responsive websites, and more) developed to compliment your mobile apps.",
+        type: CardType.selectable,
+      ),
+    ];
 
 class CardItem extends StatelessWidget {
   const CardItem({Key key, @required this.destination, this.shape})
@@ -76,9 +78,7 @@ class CardItem extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
-            SectionTitle(
-                title:Strings.appTitle
-                ),
+            SectionTitle(title: Strings.appTitle),
             SizedBox(
               height: height,
               child: Card(
@@ -96,8 +96,7 @@ class CardItem extends StatelessWidget {
 }
 
 class TappableCardItem extends StatelessWidget {
-  const TappableCardItem(
-      {Key key, @required this.destination, this.shape})
+  const TappableCardItem({Key key, @required this.destination, this.shape})
       : assert(destination != null),
         super(key: key);
 
@@ -115,8 +114,7 @@ class TappableCardItem extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
-            SectionTitle(
-                title: Strings.appTitle),
+            SectionTitle(title: Strings.appTitle),
             SizedBox(
               height: height,
               child: Card(
@@ -129,7 +127,7 @@ class TappableCardItem extends StatelessWidget {
                   },
                   // Generally, material cards use onSurface with 12% opacity for the pressed state.
                   splashColor:
-                  Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
+                      Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
                   // Generally, material cards do not have a highlight overlay.
                   highlightColor: Colors.transparent,
                   child: CardItemContent(destination: destination),
@@ -144,8 +142,7 @@ class TappableCardItem extends StatelessWidget {
 }
 
 class SelectableCardItem extends StatefulWidget {
-  const SelectableCardItem(
-      {Key key, @required this.destination, this.shape})
+  const SelectableCardItem({Key key, @required this.destination, this.shape})
       : assert(destination != null),
         super(key: key);
 
@@ -153,12 +150,10 @@ class SelectableCardItem extends StatefulWidget {
   final ShapeBorder shape;
 
   @override
-  _SelectableCardItemState createState() =>
-      _SelectableCardItemState();
+  _SelectableCardItemState createState() => _SelectableCardItemState();
 }
 
-class _SelectableCardItemState
-    extends State<SelectableCardItem> {
+class _SelectableCardItemState extends State<SelectableCardItem> {
   // This height will allow for all the Card's content to fit comfortably within the card.
   static const height = 298.0;
   var _isSelected = false;
@@ -174,8 +169,7 @@ class _SelectableCardItemState
         padding: const EdgeInsets.all(8),
         child: Column(
           children: [
-            SectionTitle(
-                title: Strings.appTitle),
+            SectionTitle(title: Strings.appTitle),
             SizedBox(
               height: height,
               child: Card(
@@ -197,8 +191,8 @@ class _SelectableCardItemState
                     children: [
                       Container(
                         color: _isSelected
-                        // Generally, material cards use primary with 8% opacity for the selected state.
-                        // See: https://material.io/design/interaction/states.html#anatomy
+                            // Generally, material cards use primary with 8% opacity for the selected state.
+                            // See: https://material.io/design/interaction/states.html#anatomy
                             ? colorScheme.primary.withOpacity(0.08)
                             : Colors.transparent,
                       ),
@@ -322,21 +316,19 @@ class CardItemContent extends StatelessWidget {
           ),
         ),
         if (destination.type == CardType.standard)
-        // share, explore buttons
+          // share, explore buttons
           ButtonBar(
             alignment: MainAxisAlignment.start,
             children: [
               FlatButton(
-                child: Text("Share",
-                    semanticsLabel: destination.title),
+                child: Text("Share", semanticsLabel: destination.title),
                 textColor: Colors.amber.shade500,
                 onPressed: () {
                   print('pressed');
                 },
               ),
               FlatButton(
-                child: Text("Explore",
-                    semanticsLabel: destination.title),
+                child: Text("Explore", semanticsLabel: destination.title),
                 textColor: Colors.amber.shade500,
                 onPressed: () {
                   print('pressed');
@@ -374,10 +366,8 @@ class _ServicesCardsState extends State<ServicesCards> {
                 child: (destination.type == CardType.standard)
                     ? CardItem(destination: destination)
                     : destination.type == CardType.tappable
-                    ? TappableCardItem(
-                    destination: destination)
-                    : SelectableCardItem(
-                    destination: destination),
+                        ? TappableCardItem(destination: destination)
+                        : SelectableCardItem(destination: destination),
               ),
           ],
         ),
@@ -388,62 +378,61 @@ class _ServicesCardsState extends State<ServicesCards> {
 
 class CardLayout extends StatelessWidget {
   const CardLayout(this.title, this.subTitle, this.image);
+
   final String title;
   final String subTitle;
   final String image;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 350,
-      width: 325,
-      child: Card(
-        clipBehavior: Clip.antiAlias,
-        // 根据设置裁剪内容
-        color: Colors.white70,
-        //  卡片背景颜色
-        elevation: 10.0,
-        // 卡片的z坐标,控制卡片下面的阴影大小
-        margin: EdgeInsets.all(10.0),
-        //  margin: EdgeInsetsDirectional.only(bottom: 30.0, top: 30.0, start: 30.0),// 边距
-        semanticContainer: true,
-        // 表示单个语义容器，还是false表示单个语义节点的集合，接受单个child，但该child可以是Row，Column或其他包含子级列表的widget
+        height: 350,
+        width: 325,
+        child: Card(
+            clipBehavior: Clip.antiAlias,
+            // 根据设置裁剪内容
+            color: Colors.white70,
+            //  卡片背景颜色
+            elevation: 10.0,
+            // 卡片的z坐标,控制卡片下面的阴影大小
+            margin: EdgeInsets.all(10.0),
+            //  margin: EdgeInsetsDirectional.only(bottom: 30.0, top: 30.0, start: 30.0),// 边距
+            semanticContainer: true,
+            // 表示单个语义容器，还是false表示单个语义节点的集合，接受单个child，但该child可以是Row，Column或其他包含子级列表的widget
 //      shape: Border.all(
 //          color: Colors.indigo, width: 1.0, style: BorderStyle.solid), // 卡片材质的形状，以及边框
-        shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-        // 圆角
-        //borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        child: Padding(
-    padding: EdgeInsets.only(left: 18, right: 18),
-    child: Column(
-          //card里面的子控件
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              SizedBox(
-                height: 30,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            // 圆角
+            //borderRadius: BorderRadius.all(Radius.circular(8.0)),
+            child: Padding(
+              padding: EdgeInsets.only(left: 18, right: 18),
+              child: Column(
+                //card里面的子控件
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  SizedBox(
+                    height: 30,
+                  ),
+                  new Image.asset(
+                    image,
+                    height: 120.0,
+                    fit: BoxFit.cover,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.blue, fontSize: 20.0)),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(subTitle,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.black54, fontSize: 18.0)),
+                ],
               ),
-              new Image.asset(
-                image,
-                height: 120.0,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-            Text(title,
-                textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.blue, fontSize: 20.0)),
-              SizedBox(
-                height: 20,
-              ),
-            Text(subTitle,
-                textAlign: TextAlign.center,
-                style: TextStyle( color: Colors.black54, fontSize: 18.0)),
-        ],
-      ),
-        )
-    )
-    );
+            )));
   }
 }
-

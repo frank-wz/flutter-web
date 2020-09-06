@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web/layout/HomeBodyClient.dart';
 import 'package:flutter_web/layout/HomeBodyServices.dart';
 import 'package:flutter_web/layout/HomeBodyWork.dart';
+import 'package:flutter_web/layout/HomeFoots.dart';
 import 'package:flutter_web/layout/HomeHeader.dart';
+import 'package:flutter_web/layout/HomeUs.dart';
 
 class PageHome extends StatelessWidget {
   PageHome({Key key, this.title}) : super(key: key);
@@ -39,6 +41,8 @@ class PageHome extends StatelessWidget {
               HomeBodyServices(),
               HomeBodyWork(),
               HomeBodyClient(),
+              HomeUs(),
+              HomeFoots(),
             ],
           ),
         ),

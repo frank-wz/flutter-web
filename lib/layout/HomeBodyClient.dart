@@ -1,82 +1,185 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web/utiles/Strings.dart';
 
 class HomeBodyClient extends StatelessWidget {
-  var backgroundImage = "assets/flutter_image.jpg";
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 600,
+      height: 200,
       child: Stack(
         fit: StackFit.expand,
-        children: <Widget>[
-          addBackground(),
-          addWelcomeText()
-        ],
+        children: <Widget>[addBackground(), addWelcomeText()],
       ),
     );
   }
 
   //Adds background Image
   Widget addBackground() {
-    return FractionallySizedBox(
-      alignment: Alignment.centerRight, //to keep images aligned to right
-      widthFactor: .6, //covers about 60% of the screen width
-      child: Image.network(
-        backgroundImage,
-        scale: .85,
-      ),
+    return Container(
+      // widthFactor: 1, //covers about 60% of the screen width
+      color: Colors.lightBlue[50],
     );
   }
 
   //Adds welcome text
   Widget addWelcomeText() {
     return FractionallySizedBox(
-      alignment: Alignment.centerLeft, //text aligned to left side
-      widthFactor: .6, //covers about half of the screen
+      alignment: Alignment.center, //text aligned to center side
       child: Padding(
-        padding: EdgeInsets.only(left: 48),
+        padding: EdgeInsets.only(left: 48, right: 48),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(
+              height: 40,
+            ),
             Text(
-              Strings.hello,
+              Strings.homeBodyClient,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 60,
+                fontSize: 30,
                 color: Colors.blue,
               ),
             ),
-            RichText(
-              text: TextSpan(
-                  text: Strings.welcomeTo,
-                  style: TextStyle(
-                      fontSize: 60,
-                      color: Colors.lightBlueAccent
+            SizedBox(
+              height: 40,
+            ),
+            //listview
+            SizedBox(
+              height: 50,
+              child: new ListView(
+                // This next line does the trick.
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  new Image.asset(
+                    "qq.png",
+                    fit: BoxFit.cover,
                   ),
-                  children: [
-                    TextSpan(
-                        text: Strings.ftf,
-                        style: TextStyle(
-                            fontSize: 60,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54
-                        )
-                    )
-                  ]
+                  new Image.asset(
+                    "wechat.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "google.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "facebook.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "tesla.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "qq.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "wechat.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "google.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "facebook.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "tesla.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "qq.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "wechat.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "google.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "facebook.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "tesla.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "qq.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "wechat.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "google.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "facebook.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "tesla.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "qq.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "wechat.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "google.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "facebook.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "tesla.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "qq.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "wechat.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "google.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "facebook.png",
+                    fit: BoxFit.cover,
+                  ),
+                  new Image.asset(
+                    "tesla.png",
+                    fit: BoxFit.cover,
+                  ),
+                ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 12.0, top: 20),
-              child: Text(Strings.subscribeText),
-            ),
-            SizedBox(height: 40,), //Give some spacing
-            EmailBox()
+            SizedBox(
+              height: 20,
+            ), //Give some spacing
           ],
         ),
       ),
@@ -84,7 +187,7 @@ class HomeBodyClient extends StatelessWidget {
   }
 }
 
-class EmailBox extends StatelessWidget{
+class EmailBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

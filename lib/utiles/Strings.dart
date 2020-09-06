@@ -4,7 +4,12 @@ class Strings {
   static const String loginButton = "Login";
   static const String homeBodyServices = "Our Services";
   static const String homeBodyWork = "Our Work";
+  static const String homeBodyClient = "Our Clients";
   static const String homeBodyAbout = "About Us";
+  static const String homeBodyAboutTitle = "Stay In Touch";
+  static const String homeBodyAboutSubTitle = "Get in touch with an expert at Magicode.";
+  static const String homeBodyWorkTitle = "Our Recent Projects";
+  static const String homeBodyWorkSubTitle = "Discover how we create digital magic through powerful, interactive mobile solutions. See more enterprise solution and mobile app case studies.";
   static const String hello = "Hello!";
   static const String homeBodyServicesContent = "Our teams of experts in business, digital infrastructure, design and development work closely with enterprise and government bodies to invent new solutions centered around mobile apps.";
   static const String welcomeTo = "Welcome to ";
@@ -19,4 +24,14 @@ class Strings {
   static const String homeServiceSubB = "Get mobile applications developed for your start-ups, businesses, and enterprise";
   static const String homeServiceTitleC = "Web App Development";
   static const String homeServiceSubC = "Have web applications (CMS, Responsive websites, and more) developed to compliment your mobile apps.";
+
+  static const String homeProTitleA = "Kiwibank";
+  static const String homeProSubA = "It’s the Kiwibank Mobile Banking app you know and love. Only better.";
+
+  static const String homeProTitleB = "My Food Bag";
+  static const String homeProSubB = "Discover new tastes and easy-to-follow recipes.";
+
+  static const String homeProTitleC = "Celo";
+  static const String homeProSubC = "Connecting Healthcare – Chat, Capture, Consent.";
+
 }
